@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<!--不支持老版本IE-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--device-width自适应移动端宽度，initial-scale=1不进行缩放-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>LXKing主页</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+      <script src="../../bootstrap/js/html5shiv.min.js"></script>
+      <script src="../../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../../js/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+		<title>CSS3实现Loading动画</title>
+		<style type="text/css">
+			.box {
+				width: 100%;
+				padding: 3%;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+			
+			.loader {
+				width: 30%;
+				float: left;
+				height: 200px;
+				margin-right: 3%;
+				border: 1px #ccc solid;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			@-webkit-keyframes loading_1 {
+				0% {
+					transform: rotate(0deg);
+				}
+				50% {
+					transform: rotate(180deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			
+			.loading-1 {
+				width: 35px;
+				height: 35px;
+				position: relative;
+			}
+			
+			.loading-1 i {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background: linear-gradient(transparent 0%, transparent 70%, #333 30%, #333 100%);
+				animation: loading_1 0.6s linear 0s infinite;
+				-moz-animation: loading_1 0.6s linear 0s infinite;
+				/* Firefox */
+				-webkit-animation: loading_1 0.6s linear 0s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_1 0.6s linear 0s infinite;
+			}
+			
+			@-webkit-keyframes loading_2 {
+				0% {
+					transform: scaleY(1)
+				}
+				50% {
+					transform: scaleY(0.4)
+				}
+				100% {
+					transform: scaleY(1);
+				}
+			}
+			
+			.loading-2 i {
+				display: inline-block;
+				width: 4px;
+				height: 35px;
+				border-radius: 2px;
+				background-color: #333;
+			}
+			
+			.loading-2 i:nth-child(1) {
+				animation: loading_2 1s ease-in 0.1s infinite;
+				-moz-animation: loading_2 1s ease-in 0.1s infinite;
+				/* Firefox */
+				-webkit-animation: loading_2 1s ease-in 0.1s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_2 1s ease-in 0.1s infinite;
+			}
+			
+			.loading-2 i:nth-child(2) {
+				animation: loading_2 1s ease-in 0.2s infinite;
+				-moz-animation: loading_2 1s ease-in 0.2s infinite;
+				/* Firefox */
+				-webkit-animation: loading_2 1s ease-in 0.2s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_2 1s ease-in 0.2s infinite;
+			}
+			
+			.loading-2 i:nth-child(3) {
+				animation: loading_2 1s ease-in 0.3s infinite;
+				-moz-animation: loading_2 1s ease-in 0.3s infinite;
+				/* Firefox */
+				-webkit-animation: loading_2 1s ease-in 0.3s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_2 1s ease-in 0.3s infinite;
+			}
+			
+			.loading-2 i:nth-child(4) {
+				animation: loading_2 1s ease-in 0.4s infinite;
+				-moz-animation: loading_2 1s ease-in 0.4s infinite;
+				/* Firefox */
+				-webkit-animation: loading_2 1s ease-in 0.4s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_2 1s ease-in 0.4s infinite;
+			}
+			
+			.loading-2 i:nth-child(5) {
+				animation: loading_2 1s ease-in 0.5s infinite;
+				-moz-animation: loading_2 1s ease-in 0.5s infinite;
+				/* Firefox */
+				-webkit-animation: loading_2 1s ease-in 0.5s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_2 1s ease-in 0.5s infinite;
+			}
+			
+			.loading-2 i:nth-child(6) {
+				animation: loading_2 1s ease-in 0.6s infinite;
+				-moz-animation: loading_2 1s ease-in 0.6s infinite;
+				/* Firefox */
+				-webkit-animation: loading_2 1s ease-in 0.6s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_2 1s ease-in 0.6s infinite;
+			}
+			
+			@-webkit-keyframes loading_3 {
+				50% {
+					transform: scale(0.4);
+					opacity: 0.3;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+			
+			.loading-3 {
+				position: relative;
+			}
+			
+			.loading-3 i {
+				display: block;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background-color: #333;
+				position: absolute;
+			}
+			
+			.loading-3 i:nth-child(1) {
+				top: 25px;
+				left: 0;
+				animation: loading_3 1s ease 0s infinite;
+				-moz-animation: loading_3 1s ease 0s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease 0s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease 0s infinite;
+			}
+			
+			.loading-3 i:nth-child(2) {
+				top: 17px;
+				left: 17px;
+				animation: loading_3 1s ease -0.12s infinite;
+				-moz-animation: loading_3 1s ease -0.12s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease -0.12s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease -0.12s infinite;
+			}
+			
+			.loading-3 i:nth-child(3) {
+				top: 0;
+				left: 25px;
+				-webkit-animation: loading_3 1s ease -0.24s infinite;
+				animation: loading_3 1s ease 0.24s infinite;
+				-moz-animation: loading_3 1s ease 0.24s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease 0.24s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease 0.24s infinite;
+			}
+			
+			.loading-3 i:nth-child(4) {
+				top: -17px;
+				left: 17px;
+				animation: loading_3 1s ease -0.36s infinite;
+				-moz-animation: loading_3 1s ease -0.36s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease -0.36s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease -0.36s infinite;
+			}
+			
+			.loading-3 i:nth-child(5) {
+				top: -25px;
+				left: 0;
+				animation: loading_3 1s ease -0.48s infinite;
+				-moz-animation: loading_3 1s ease -0.48s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease -0.48s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease -0.48s infinite;
+			}
+			
+			.loading-3 i:nth-child(6) {
+				top: -17px;
+				left: -17px;
+				animation: loading_3 1s ease -0.6s infinite;
+				-moz-animation: loading_3 1s ease -0.6s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease -0.6s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease -0.6s infinite;
+			}
+			
+			.loading-3 i:nth-child(7) {
+				top: 0;
+				left: -25px;
+				animation: loading_3 1s ease -0.72s infinite;
+				-moz-animation: loading_3 1s ease -0.72s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease -0.72s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease -0.72s infinite;
+			}
+			
+			.loading-3 i:nth-child(8) {
+				top: 17px;
+				left: -17px;
+				animation: loading_3 1s ease -0.84s infinite;
+				-moz-animation: loading_3 1s ease -0.84s infinite;
+				/* Firefox */
+				-webkit-animation: loading_3 1s ease -0.84s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: loading_3 1s ease -0.84s infinite;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<div class="container">
+			<h1 class="text-center">CSS3 实现 loading 动画</h1>
+			<div class="box">
+				<div class="loader">
+					<div class="loading-1">
+						<i></i>
+					</div>
+				</div>
+				<div class="loader">
+					<div class="loading-2">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+				<div class="loader">
+					<div class="loading-3">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+			</div>
+		</div>-->
+					<h1 class="text-center">CSS3 实现 loading 动画</h1>
+			<div class="box">
+				<div class="loader">
+					<div class="loading-1">
+						<i></i>
+					</div>
+				</div>
+				<div class="loader">
+					<div class="loading-2">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+				<div class="loader">
+					<div class="loading-3">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+			</div>
+
+		<div class="goback">
+			<p class="text-center"></p>
+			<a href="../../index.html" type="button" class="btn btn-primary btn-lg btn-block">返回</a>
+		</div>
+	</body>
+
+</html>
